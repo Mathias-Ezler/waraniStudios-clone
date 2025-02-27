@@ -1,0 +1,149 @@
+---
+// Íconos para redes sociales (puedes usar @iconify-icons o similar)
+const socialIcons = [
+  { name: 'facebook', url: '#', icon: 'fa-facebook' },
+  { name: 'instagram', url: '#', icon: 'fa-instagram' },
+  { name: 'youtube', url: '#', icon: 'fa-youtube' },
+  { name: 'tiktok', url: '#', icon: 'fa-tiktok' }
+];
+
+const navItems = [
+  { name: 'Inicio', url: '#inicio' },
+  { name: 'Quiénes Somos', url: '#quienes-somos' },
+  { name: 'Nuestro Trabajo', url: '#nuestro-trabajo' },
+  { name: 'Tienda', url: '#tienda' },
+  { name: 'Contacto', url: '#contacto' }
+];
+---
+
+<header class="bg-[#000000dd] text-white fixed w-full z-50">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/">
+          <img src="/waralogo.png" alt="Logo de Waraní" class="h-16 lg:h-20" />
+        </a>
+      </div>
+
+      <!-- Menú de navegación para pantallas grandes -->
+      <nav class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        {navItems.map(item => (
+          <a 
+            href={item.url} 
+            class="px-3 py-2 border-b-2 border-transparent hover:border-red-500 hover:text-gray-300 transition duration-300 focus:text-red-500 focus:border-red-500"
+          >
+            {item.name}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Idiomas y redes sociales para pantallas grandes -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <a href="#" class="hover:text-gray-300 transition duration-300">
+          <img src="/svgs/spain.svg" alt="España" class="h-8 xl:h-10">
+        </a>
+        <a href="#" class="hover:text-gray-300 transition duration-300">
+          <img src="/svgs/eeuu.svg" alt="USA" class="h-8 xl:h-10">
+        </a>
+        
+        <!-- Redes sociales -->
+        <div class="hidden xl:flex items-center space-x-4">
+          {socialIcons.map(social => (
+            <a href={social.url} class="hover:text-gray-300 transition duration-300" aria-label={social.name}>
+              <i class={`fab ${social.icon} text-xl`}></i>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Botón de menú hamburguesa para dispositivos hasta 1024px -->
+      <button id="menu-toggle" class="lg:hidden flex items-center" aria-label="Abrir menú">
+        <!-- Ícono de hamburguesa (visible por defecto) -->
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        
+        <!-- Ícono de X (oculto por defecto) -->
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú móvil (oculto por defecto) -->
+    <div id="mobile-menu" class="lg:hidden hidden pt-4 pb-2">
+      <nav class="flex flex-col space-y-3">
+        {navItems.map(item => (
+          <a 
+            href={item.url} 
+            class="px-3 py-2 border-l-4 border-transparent hover:border-red-500 hover:bg-gray-900 hover:text-gray-300 transition duration-300"
+          >
+            {item.name}
+          </a>
+        ))}
+      </nav>
+      
+      <!-- Idiomas y redes sociales en móvil -->
+      <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-700">
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-gray-300 transition duration-300">
+            <img src="/svgs/spain.svg" alt="España" class="h-8">
+          </a>
+          <a href="#" class="hover:text-gray-300 transition duration-300">
+            <img src="/svgs/eeuu.svg" alt="USA" class="h-8">
+          </a>
+        </div>
+        
+        <div class="flex space-x-4">
+          {socialIcons.map(social => (
+            <a href={social.url} class="hover:text-gray-300 transition duration-300" aria-label={social.name}>
+              <i class={`fab ${social.icon} text-xl`}></i>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Script para manejar el menú móvil
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (menuToggle && mobileMenu && hamburgerIcon && closeIcon) {
+      menuToggle.addEventListener('click', () => {
+        // Toggle del menú
+        mobileMenu.classList.toggle('hidden');
+        
+        // Cambiar entre íconos de hamburguesa y X
+        hamburgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+      
+      // Cerrar menú al hacer clic en un enlace
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          // Restaurar ícono de hamburguesa
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Estilos adicionales si son necesarios */
+  @media (max-width: 1024px) {
+    #mobile-menu.hidden {
+      display: none;
+    }
+  }
+</style>
