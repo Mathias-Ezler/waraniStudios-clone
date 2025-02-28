@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Acerca de nosotros">
+  <body class="flex flex-col min-h-screen bg-gray-900">
+    <!-- Hero Section con imagen de fondo -->
+    <section class="relative flex items-center justify-center h-screen bg-cover bg-center" style="background-image: url('/about.jpg')">
+      <div class="absolute inset-0 bg-black/50 z-10"></div>
+      <div class="container mx-auto px-6 z-20 text-center">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 sm:mb-6 drop-shadow-lg press-start-2p-regular animate-pulse">
+          #GameDevForGamers
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+          Somos un estudio independiente de desarrollo de videojuegos, comprometidos con crear experiencias únicas e inmersivas. Nuestra pasión por la innovación y la excelencia nos impulsa a superar límites en cada proyecto.
+        </p>
+        <a href="#contacto" class="inline-block py-3 px-6 mt-6 text-xl font-semibold text-black bg-yellow-400 rounded-lg transition-all hover:bg-yellow-500 hover:text-white focus:ring-4 focus:ring-yellow-300">
+          Contáctanos
+        </a>
+      </div>
+    </section>
+
+    <!-- Sección de contenido adicional si es necesario -->
+    <section id="contacto" class="py-16 bg-gray-800 text-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-6">
+          ¿Listo para unirte a nuestra comunidad?
+        </h2>
+        <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-12">
+          Estamos siempre abiertos a nuevos proyectos y colaboraciones. Si tienes una idea o simplemente deseas saber más, no dudes en ponerte en contacto con nosotros.
+        </p>
+        <!-- Formulario o enlace de contacto podría ir aquí -->
+      </div>
+    </section>
+  </body>
+</Layout>
