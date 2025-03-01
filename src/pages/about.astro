@@ -2,35 +2,340 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Acerca de nosotros">
-  <body class="flex flex-col min-h-screen bg-gray-900">
-    <!-- Hero Section con imagen de fondo -->
-    <section class="relative flex items-center justify-center h-screen bg-cover bg-center" style="background-image: url('/about.jpg')">
-      <div class="absolute inset-0 bg-black/50 z-10"></div>
+<Layout title="Acerca de nosotros | Estudio de Desarrollo de Videojuegos">
+  <main class="flex flex-col min-h-screen bg-black text-white">
+    <!-- Hero Section con efecto de partículas de código -->
+    <section class="relative flex items-center justify-center h-screen overflow-hidden">
+      <video autoplay loop muted class="absolute w-full h-full object-cover opacity-40">
+        <source src="/video/videowarani.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black z-10"></div>
       <div class="container mx-auto px-6 z-20 text-center">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 sm:mb-6 drop-shadow-lg press-start-2p-regular animate-pulse">
-          #GameDevForGamers
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 press-start-2p-regular tracking-tighter">
+          WARANI<span class="text-red-600">STUDIOS</span>
         </h1>
-        <p class="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
-          Somos un estudio independiente de desarrollo de videojuegos, comprometidos con crear experiencias únicas e inmersivas. Nuestra pasión por la innovación y la excelencia nos impulsa a superar límites en cada proyecto.
+        <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed font-light">
+          Forjando mundos digitales desde el código hasta la experiencia final. Somos desarrolladores, artistas y gamers construyendo el futuro del entretenimiento interactivo.
         </p>
-        <a href="#contacto" class="inline-block py-3 px-6 mt-6 text-xl font-semibold text-black bg-yellow-400 rounded-lg transition-all hover:bg-yellow-500 hover:text-white focus:ring-4 focus:ring-yellow-300">
-          Contáctanos
-        </a>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#studio" class="inline-block py-3 px-6 text-lg font-bold text-black bg-white rounded-none border-2 border-white hover:bg-transparent hover:text-white transition-all duration-300 uppercase tracking-wide">
+            Nuestro Estudio
+          </a>
+          <a href="#games" class="inline-block py-3 px-6 text-lg font-bold bg-red-600 text-white rounded-none border-2 border-red-600 hover:bg-transparent transition-all duration-300 uppercase tracking-wide">
+            Nuestros Juegos
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-0 right-0 mx-auto text-center z-20 animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
       </div>
     </section>
 
-    <!-- Sección de contenido adicional si es necesario -->
-    <section id="contacto" class="py-16 bg-gray-800 text-white">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-extrabold mb-6">
-          ¿Listo para unirte a nuestra comunidad?
-        </h2>
-        <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-12">
-          Estamos siempre abiertos a nuevos proyectos y colaboraciones. Si tienes una idea o simplemente deseas saber más, no dudes en ponerte en contacto con nosotros.
-        </p>
-        <!-- Formulario o enlace de contacto podría ir aquí -->
+    <!-- Sobre el Estudio -->
+    <section id="studio" class="py-20 bg-black relative">
+      <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/0 to-black/100"></div>
+      <div class="container mx-auto px-6 mt-10">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 border-l-4 border-red-600 pl-6">SOBRE EL ESTUDIO</h2>
+            <p class="text-lg mb-6 text-gray-300">
+              Fundado en 2015 por un equipo de desarrolladores veteranos de la industria, WaraniStudios nació con una visión clara: crear experiencias de juego que desafíen los límites técnicos y narrativos.
+            </p>
+            <p class="text-lg mb-6 text-gray-300">
+              Hemos sido finalistas en el Indie Prize USA 2019 y obtuvimos premios como: Mejor MIPYME 2019. Nuestros productos se venden a nivel mundial y ya tenemos muchos usuarios disfrutándolos. También hemos recibido el Reconocimiento del Congreso Nacional de la República del Paraguay por aporte a la cultura y por ser nombrados Jóvenes del año.
+            </p>
+            <p class="text-lg mb-8 text-gray-300">
+              Nuestros videojuegos son reconocidos de interés cultural por la República del Paraguay y la Municipalidad de Asunción. Actualmente estamos trabajando en proyectos propios de camino a un futuro donde el Gaming Nacional tenga un lugar a nivel mundial.
+            </p>
+            </div>
+          </div>
+          <div class="md:w-1/2 relative">
+            <div class="grid grid-cols-2 gap-4">
+              <img src="/img/juego1.jpg" alt="Nuestro espacio de trabajo" class="w-full h-auto object-cover border-4 border-white transform rotate-3 shadow-2xl">
+              <img src="/img/juego2.jpg" alt="Equipo trabajando" class="w-full h-auto object-cover border-4 border-white transform -rotate-2 shadow-2xl">
+              <img src="/img/juego3.jpg" alt="Setup de testing" class="w-full h-auto object-cover border-4 border-white transform -rotate-3 shadow-2xl">
+              <img src="/img/juego4.jpg" alt="Sesión de brainstorming" class="w-full h-auto object-cover border-4 border-white transform rotate-2 shadow-2xl">
+            </div>
+            <div class="absolute -bottom-5 -right-5 bg-red-600 p-4 z-10 shadow-xl">
+              <p class="text-white font-bold">IDEAMOS. CREAMOS. EVOLUCIONAMOS.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  </body>
+
+    <!-- Nuestros Juegos -->
+    <section id="games" class="py-20 bg-black relative z-780">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-center">TÍTULOS DESTACADOS</h2>
+
+        <!-- Featured Game -->
+        <div class="mb-20 relative overflow-hidden">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-2/3 relative">
+              <img src="/img/juego1.jpg" alt="Nuestro juego destacado" class="w-full h-auto">
+              <div class="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent md:bg-gradient-to-r md:from-black md:via-black/70 md:to-transparent/0"></div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <div class="inline-block bg-red-600 px-4 py-1 mb-4 text-sm font-bold">NUEVO LANZAMIENTO</div>
+              </div>
+            </div>
+            <div class="md:w-1/3 bg-white text-black p-8 flex flex-col justify-center">
+              <h3 class="text-2xl sm:text-3xl font-extrabold mb-4">THE ORIGIN: Blind Maid</h3>
+              <p class="text-gray-700 mb-6">
+                La aventura de terror en primera persona THE ORIGIN: Blind Maid llegará durante el primer trimestre del próximo año. Será publicado por Badland Publishing y llegará a PlayStation 4, Xbox One, Nintendo Switch y Steam.
+
+Sumérgete en la más intensa historia de horror de los últimos tiempos y descubre el verdadero origen de todo mal.
+              </p>
+              <ul class="mb-8 space-y-2">
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  a
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  b
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  c
+                </li>
+              </ul>
+              <div class="flex space-x-4">
+                <a href="/games/neon-dynasty" class="inline-block py-2 px-6 bg-black text-white font-bold hover:bg-red-600 transition-colors duration-300">VER DETALLES</a>
+                <a href="https://store.steampowered.com" target="_blank" class="inline-block py-2 px-6 bg-red-600 text-white font-bold hover:bg-red-700 transition-colors duration-300">COMPRAR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Games Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Game 1 -->
+          <div class="group bg-white text-black overflow-hidden">
+            <div class="relative overflow-hidden">
+              <img src="/img/juego2.jpg" alt="Quantum Raiders" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p class="font-bold">Un pequeño mundo abierto donde los niños pueden aprender a emprender en pequeños negocios como la venta de limonadas, pasteles y también aprender sobre finanzas.</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">SuperChicos</h3>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">PC / Xbox / PlayStation</span>
+                <a href="/games/quantum-raiders" class="text-red-600 font-bold hover:underline">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game 2 -->
+          <div class="group bg-white text-black overflow-hidden">
+            <div class="relative overflow-hidden">
+              <img src="/img/juego3.jpg" alt="Eternal Echo" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p class="font-bold">Mini juego en primera persona desarrollado en el curso de desarrollo de videojuegos UnrealMAX en el año 2020. Trata sobre un padre buscando las últimas cosas de su hija luego de un apocalipsis.</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">The Last Search</h3>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">PC / Nintendo Switch</span>
+                <a href="/games/eternal-echo" class="text-red-600 font-bold hover:underline">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game 3 -->
+          <div class="group bg-white text-black overflow-hidden">
+            <div class="relative overflow-hidden">
+              <img src="/img/juego4.jpg" alt="Velocity Surge" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p class="font-bold">Juego de disparos en primera persona que empezó en el año 2015. Tiene una demo jugable en la plataforma Steam con multijugador. Se pretende retomar el proyecto en el año 2021.</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Guerra del Chaco</h3>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-700">PC / Xbox / PlayStation</span>
+                <a href="/games/velocity-surge" class="text-red-600 font-bold hover:underline">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="/games" class="inline-block py-3 px-8 bg-white text-black font-bold border-2 border-white hover:bg-transparent hover:text-white transition-all duration-300 uppercase tracking-wide">
+            Ver catálogo completo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo -->
+<section class="py-20 bg-red-600 text-white relative z-779">
+  <div class="absolute top-0 left-0 w-full overflow-hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="text-black fill-current h-16 w-full">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path>
+    </svg>
+  </div>
+  <div class="container mx-auto px-6 pt-10">
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-16 text-center">NUESTRO EQUIPO</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Team Member 1 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member1.jpg" alt="Ismael Pozzo" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Ismael Pozzo</h3>
+        <p class="text-red-500 mb-4"> CEO & Founder</p>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member2.jpg" alt="Eduardo Benitez" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Eduardo Benitez</h3>
+        <p class="text-red-500 mb-4">CEO & Founder</p>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member3.webp" alt="Carlos Ruiz" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Andrés Gómez</h3>
+        <p class="text-red-500 mb-4">Founder - Backend Dev & Servers</p>
+       
+      </div>
+
+      <!-- Team Member 4 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member4.jpg" alt="Elena Vázquez" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Hector Pérez López</h3>
+        <p class="text-red-500 mb-4">3D Modeler & Animator</p>
+  
+      </div>
+
+      <!-- Team Member 5 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member5.jpg" alt="Miembro 5" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Kalo Armoa</h3>
+        <p class="text-red-500 mb-4">3D Modeler & Web Designer</p>
+        
+      </div>
+
+      <!-- Team Member 6 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member6.jpg" alt="Miembro 6" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Rodrigo Mendoza</h3>
+        <p class="text-red-500 mb-4">Marketing</p>
+        <p class="text-gray-300 text-sm">
+
+        </p>
+      </div>
+
+      <!-- Team Member 7 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member7.jpg" alt="Miembro 7" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Humberto Pérez López</h3>
+        <p class="text-red-500 mb-4">Humberto Pérez López</p>
+        <p class="text-gray-300 text-sm">
+       
+        </p>
+      </div>
+
+      <!-- Team Member 8 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member8.jpg" alt="Miembro 8" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Yumi Barreto</h3>
+        <p class="text-red-500 mb-4">Concept Art</p>
+        <p class="text-gray-300 text-sm">
+          
+        </p>
+      </div>
+
+      <!-- Team Member 9 -->
+      <div class="bg-black p-6 group relative overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 mb-6 overflow-hidden">
+          <img src="/team/member9.jpg" alt="Miembro 9" class="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <h3 class="text-xl font-bold mb-1">Ivo Porreca</h3>
+        <p class="text-red-500 mb-4">Ivo Porreca</p>
+        <p class="text-gray-300 text-sm">
+        
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-black text-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold mb-8">CONTÁCTANOS</h2>
+          <p class="text-xl mb-12">
+            ¿Tienes una idea para colaborar? ¿Preguntas sobre nuestros juegos? ¿Quieres unirte a nuestro equipo? Estamos aquí para escucharte.
+          </p>
+
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="md:col-span-2">
+              <input type="text" placeholder="Nombre" class="w-full p-4 bg-white/10 border border-white/20 text-white focus:border-red-600 focus:outline-none">
+            </div>
+            <div>
+              <input type="email" placeholder="Email" class="w-full p-4 bg-white/10 border border-white/20 text-white focus:border-red-600 focus:outline-none">
+            </div>
+            <div>
+              <input type="text" placeholder="Asunto" class="w-full p-4 bg-white/10 border border-white/20 text-white focus:border-red-600 focus:outline-none">
+            </div>
+            <div class="md:col-span-2">
+              <textarea rows="5" placeholder="Mensaje" class="w-full p-4 bg-white/10 border border-white/20 text-white focus:border-red-600 focus:outline-none"></textarea>
+            </div>
+            <div class="md:col-span-2 text-center">
+              <button type="submit" class="inline-block py-3 px-12 bg-red-600 text-white font-bold uppercase tracking-wide hover:bg-red-700 transition-colors">Enviar mensaje</button>
+            </div>
+          </form>
+
+          <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <p>info@waranistudios.com</p>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <p>Calle Falsa 123, Asunción, Paraguay</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
