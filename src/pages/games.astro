@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Datos de ejemplo para los juegos
+const games = [
+  {
+    id: 1,
+    title: "THE ORIGIN: Blind Maid",
+    image: "/img/juego1.jpg",
+    description: "La aventura de terror en primera persona THE ORIGIN: Blind Maid llegará durante el primer trimestre del próximo año. Será publicado por Badland Publishing y llegará a PlayStation 4, Xbox One, Nintendo Switch y Steam. Sumérgete en la más intensa historia de horror de los últimos tiempos y descubre el verdadero origen de todo mal."
+  },
+  {
+    id: 2,
+    title: "SuperChicos",
+    image: "/img/juego2.jpg",
+    description: "Superchicos es un juego en tercera persona para PC y teléfonos para niños y padres. Es un pequeño mundo abierto donde los niños pueden aprender a emprender en pequeños negocios como la venta de limonadas, pasteles y también aprender sobre finanzas, con entretenidas misiones e importantes moralejas para la vida. Fue creado para la empresa paraguaya ENEM SRL en el año 2018 y actualizado en 2020. Su lanzamiento se prevé para noviembre de este año 2020."
+  },
+  {
+    id: 3,
+    title: "The Last Search",
+    image: "/img/juego3.jpg",
+    description: "Mini juego en primera persona desarrollado en el curso de desarrollo de videojuegos UnrealMAX en el año 2020. Trata sobre un padre buscando las últimas cosas de su hija luego de un apocalipsis."
+  },
+  {
+    id: 4,
+    title: "Guerra del Chaco",
+    image: "/img/juego4.jpg",
+    description: "Juego de disparos en primera persona que empezó en el año 2015. Tiene una demo jugable en la plataforma Steam con multijugador. Se pretende retomar el proyecto en el año 2021."
+  }
+];
+
+// Datos para las empresas colaboradoras
+const partners = [
+  { name: "Windows", logo: "/img/windows.png" },
+  { name: "PlayStation", logo: "/img/ps4.png" },
+  { name: "Xbox", logo: "/img/xbo.png" },
+  { name: "Switch", logo: "/img/switch.png" }
+];
+---
+
+<Layout title="Nuestros Juegos">
+  <main class="min-h-screen flex flex-col bg-black text-white">
+    <!-- Sección de introducción -->
+    <section class="relative h-screen w-full">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/fondotrabajos.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+      </div>
+      <div class="relative z-10 h-full flex flex-col items-center justify-center text-white px-4 text-center">
+        <h1 class="text-2xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 press-start-2p-regular tracking-tighter">
+          NUESTRO<span class="text-red-600">TRABAJO</span>
+        </h1>
+        <p class="text-2xl md:text-3xl max-w-4xl">Desde el año 2015 empezamos a trabajar creando todo tipo de videojuegos.</p>
+        <div class="mt-10">
+          <a href="#games" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-xl transition-all duration-300 inline-block">
+            Explorar Juegos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de juegos -->
+    <section id="games" class="py-20 px-4 bg-black z-781">
+      <div class="container mx-auto">
+        <h2 class="text-1xl press-start-2p-regular text-center mb-16 text-gray-300">#GameDevForGamers</h2>
+        <div class="space-y-24">
+          {games.map((game, index) => (
+            <div class={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}>
+              <div class="lg:w-1/2">
+                <div class="relative overflow-hidden rounded-xl group">
+                  <img src={game.image} alt={game.title} class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-70"></div>
+                </div>
+              </div>
+              <div class="lg:w-1/2 space-y-6">
+                <h3 class="text-4xl font-bold text-red-600">{game.title}</h3>
+                <p class="text-xl text-gray-300 leading-relaxed">{game.description}</p>
+                <div class="pt-4">
+                  <button class="bg-black border-2 border-red-600 text-white hover:bg-red-600 transition-colors duration-300 text-lg font-semibold py-3 px-8 rounded-lg cursor-pointer">
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer con logos de empresas -->
+    <footer class="bg-zinc-950 text-white py-20 z-782">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16 text-red-600">NUESTROS COLABORADORES</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {partners.map(partner => (
+            <div class="text-center transform hover:scale-105 transition-transform duration-300">
+              <div class="bg-black p-8 rounded-xl shadow-lg shadow-red-600/20">
+                <img src={partner.logo} alt={partner.name} class="h-32 lg:h-40 mx-auto mb-6" />
+                <p class="text-2xl font-bold">{partner.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
